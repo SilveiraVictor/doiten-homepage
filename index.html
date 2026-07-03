@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doiten | Tecnologia para Facilitar seu Dia a Dia</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- TELA DE LOADING -->
+    <div id="preloader">
+        <div class="loader-logo-wrapper">
+            <svg class="loader-logo" viewBox="-10 -10 460 280" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <!-- Linha Azul -->
+                <path class="path-blue" d="M388.8 256.9 L389.5 121.8 L315.5 121.8 L315.5 256.9 L235.3 256.9 L192.1 214 L192.1 121.9 L159.7 121.9 L159.7 214 L116.8 256.9 L43.2 256.9 L22.9 236.9 L0 214 L0 121.9 L43.7 78.3 L116 78.3 L116 0 L159.7 0 L159.7 78.3 L192.1 78.3 L192.1 0 L235.1 0 L235.1 78.3 L261.4 78.3 L261.4 121.9 L235.1 121.9 L235.1 214 L272.4 214 L272.4 121.9 L272.7 121.9 L303.9 90.1 L315.5 78.3 L388.8 78.3 L419.8 109.3 L432.1 121.9 L432.1 256.9 Z M43.2 214 L116 214 L116 121.9 L43.2 121.9 Z"/>
+                <!-- Linha Laranja com Pop Out -->
+                <path class="path-orange" d="M388.8 256.9 L389.5 121.8 L315.5 121.8 L315.5 256.9 L235.3 256.9 L192.1 214 L192.1 121.9 L159.7 121.9 L159.7 214 L116.8 256.9 L43.2 256.9 L22.9 236.9 L0 214 L0 121.9 L43.7 78.3 L116 78.3 L116 0 L159.7 0 L159.7 78.3 L192.1 78.3 L192.1 0 L235.1 0 L235.1 78.3 L261.4 78.3 L261.4 121.9 L235.1 121.9 L235.1 214 L272.4 214 L272.4 121.9 L272.7 121.9 L303.9 90.1 L315.5 78.3 L388.8 78.3 L419.8 109.3 L432.1 121.9 L432.1 256.9 Z M43.2 214 L116 214 L116 121.9 L43.2 121.9 Z"/>
+            </svg>
+        </div>
+        <div class="loader-text">DOITEN</div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-svg-container">
+                    <svg width="100%" height="100%" viewBox="0 0 450 265" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <!-- Fundo Azul -->
+                        <path fill="#002AF7" d="M388.8 256.9 L389.5 121.8 L315.5 121.8 L315.5 256.9 L235.3 256.9 L192.1 214 L192.1 121.9 L159.7 121.9 L159.7 214 L116.8 256.9 L43.2 256.9 L22.9 236.9 L0 214 L0 121.9 L43.7 78.3 L116 78.3 L116 0 L159.7 0 L159.7 78.3 L192.1 78.3 L192.1 0 L235.1 0 L235.1 78.3 L261.4 78.3 L261.4 121.9 L235.1 121.9 L235.1 214 L272.4 214 L272.4 121.9 L272.7 121.9 L310.9 90.1 L322.5 78.3 L395.8 78.3 L426.8 109.3 L439.1 121.9 L439.1 256.9 Z M50.2 214 L123 214 L123 121.9 L50.2 121.9 Z"/>
+                        <!-- Frente Laranja -->
+                        <path fill="#FF5A43" d="M395.8 256.9 L396.5 121.8 L322.5 121.8 L322.5 256.9 L242.3 256.9 L199.1 214 L199.1 121.9 L166.7 121.9 L166.7 214 L123.8 256.9 L50.2 256.9 L29.9 236.9 L7 214 L7 121.9 L50.7 78.3 L123 78.3 L123 0 L166.7 0 L166.7 78.3 L199.1 78.3 L199.1 0 L242.1 0 L242.1 78.3 L268.4 78.3 L268.4 121.9 L242.1 121.9 L242.1 214 L279.4 214 L279.4 121.9 L279.7 121.9 L310.9 90.1 L322.5 78.3 L395.8 78.3 L426.8 109.3 L439.1 121.9 L439.1 256.9 Z M50.2 214 L123 214 L123 121.9 L50.2 121.9 Z"/>
+                    </svg>
+                </div>
+                <span>Doiten</span>
+            </a>
+            
+            <div class="header-nav-group">
+                <ul class="nav-links">
+                    <li><a href="#solucoes">O que fazemos</a></li>
+                    <li><a href="#sobre">Quem somos</a></li>
+                    <li><a href="#contato" class="btn-sobrio">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero reveal">
+            <h1>Sua empresa mais <span>rápida e organizada</span></h1>
+            <p>Ajudamos você a trocar o trabalho manual por sistemas fáceis de usar. Também fazemos a integração das ferramentas que a sua equipe já utiliza.</p>
+            <a href="#solucoes" class="btn-hero">Conhecer Soluções</a>
+        </section>
+
+        <!-- SOLUÇÕES -->
+        <section id="solucoes" class="solutions">
+            <div class="section-container">
+                <h2 class="section-title reveal">O que podemos fazer pelo seu negócio?</h2>
+                <p class="section-subtitle reveal">Nosso foco é resolver as dores de cabeça do seu dia a dia com a tecnologia certa para o seu caso.</p>
+                
+                <div class="grid-solutions">
+                    <div class="card reveal">
+                        <h3>Adeus ao Trabalho Manual</h3>
+                        <p>Se você ainda perde tempo com muita papelada, planilhas ou digitando a mesma coisa várias vezes, nós criamos sistemas simples para fazer o trabalho duro por você.</p>
+                        <ul>
+                            <li>Chega de redigitar informações</li>
+                            <li>Todos os dados da empresa em um só lugar</li>
+                            <li>Mais tempo livre para focar em vender</li>
+                        </ul>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3>Integração de Sistemas</h3>
+                        <p>Você usa um sistema para vendas e outro para o financeiro e eles não se comunicam? Nós fazemos a integração entre eles para que as informações passem de um lado para o outro de forma automática.</p>
+                        <ul>
+                            <li>Integração segura entre ferramentas</li>
+                            <li>Melhoria de sistemas antigos</li>
+                            <li>Dados atualizados na hora, sem esforço</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="about">
+            <div class="about-content reveal">
+                <div class="about-text">
+                    <h2>Sobre a Doiten</h2>
+                    <p>Somos uma empresa que cria sistemas sob medida e ajuda negócios a usarem a tecnologia a seu favor. Acreditamos que a inovação deve facilitar a sua vida, e não dar mais dor de cabeça.</p>
+                    <p>Trabalhamos lado a lado com você. Primeiro entendemos onde o "calo aperta" na sua rotina, para só depois criar algo que realmente resolva o problema da sua equipe.</p>
+                </div>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span>Do Início ao Fim</span>
+                        <p>Ajudamos desde a ideia no papel até o sistema estar perfeitamente rodando.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span>Sem Complicação</span>
+                        <p>Explicamos tudo de um jeito simples e direto que qualquer pessoa entende.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO ESTATÍCO E DISCRETO -->
+        <section id="contato" class="contact">
+            <div class="contact-box reveal">
+                <h2>Informações de Contato</h2>
+                <p>Está precisando de uma solução em tecnologia para simplificar o seu negócio? Entre em contato com a nossa equipe através do e-mail abaixo.</p>
+                <div class="email-display">
+                    contato@doiten.com.br
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-info-logo">
+                    <svg width="100%" height="100%" viewBox="0 0 450 265" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <path fill="#002AF7" d="M388.8 256.9 L389.5 121.8 L315.5 121.8 L315.5 256.9 L235.3 256.9 L192.1 214 L192.1 121.9 L159.7 121.9 L159.7 214 L116.8 256.9 L43.2 256.9 L22.9 236.9 L0 214 L0 121.9 L43.7 78.3 L116 78.3 L116 0 L159.7 0 L159.7 78.3 L192.1 78.3 L192.1 0 L235.1 0 L235.1 78.3 L261.4 78.3 L261.4 121.9 L235.1 121.9 L235.1 214 L272.4 214 L272.4 121.9 L272.7 121.9 L310.9 90.1 L322.5 78.3 L395.8 78.3 L426.8 109.3 L439.1 121.9 L439.1 256.9 Z M50.2 214 L123 214 L123 121.9 L50.2 121.9 Z"/>
+                        <path fill="#FF5A43" d="M395.8 256.9 L396.5 121.8 L322.5 121.8 L322.5 256.9 L242.3 256.9 L199.1 214 L199.1 121.9 L166.7 121.9 L166.7 214 L123.8 256.9 L50.2 256.9 L29.9 236.9 L7 214 L7 121.9 L50.7 78.3 L123 78.3 L123 0 L166.7 0 L166.7 78.3 L199.1 78.3 L199.1 0 L242.1 0 L242.1 78.3 L268.4 78.3 L268.4 121.9 L242.1 121.9 L242.1 214 L279.4 214 L279.4 121.9 L279.7 121.9 L310.9 90.1 L322.5 78.3 L395.8 78.3 L426.8 109.3 L439.1 121.9 L439.1 256.9 Z M50.2 214 L123 214 L123 121.9 L50.2 121.9 Z"/>
+                    </svg>
+                </div>
+                <p>Criamos sistemas sob medida e ajudamos sua empresa a trocar o trabalho manual e a papelada por tecnologia fácil de usar.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Fale com a gente</h4>
+                <p><strong>E-mail:</strong> contato@doiten.com.br</p>
+                <p><strong>Endereço:</strong> Rua Jaime Brito, nº 110, Santa Rita, Caetité - BA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Doiten. Todos os direitos reservados.</p>
+            <p>CNPJ: 42.892.031/0001-44</p>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
