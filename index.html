@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- TELA DE LOADING -->
     <div id="preloader">
         <div class="loader-logo-wrapper">
             <svg class="loader-logo" viewBox="-10 -10 460 280" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
@@ -21,7 +20,6 @@
         <div class="loader-text">DOITEN</div>
     </div>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
@@ -37,7 +35,12 @@
             </a>
             
             <div class="header-nav-group">
-                <ul class="nav-links">
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#solucoes">O que fazemos</a></li>
                     <li><a href="#sobre">Quem somos</a></li>
                     <li><a href="#contato" class="btn-sobrio">Contato</a></li>
@@ -47,14 +50,12 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
         <section class="hero reveal">
             <h1>Sua empresa mais <span>rápida e organizada</span></h1>
             <p>Ajudamos você a trocar o trabalho manual por sistemas fáceis de usar. Também fazemos a integração das ferramentas que a sua equipe já utiliza.</p>
             <a href="#solucoes" class="btn-hero">Conhecer Soluções</a>
         </section>
 
-        <!-- SOLUÇÕES -->
         <section id="solucoes" class="solutions">
             <div class="section-container">
                 <h2 class="section-title reveal">O que podemos fazer pelo seu negócio?</h2>
@@ -84,7 +85,6 @@
             </div>
         </section>
 
-        <!-- SOBRE -->
         <section id="sobre" class="about">
             <div class="about-content reveal">
                 <div class="about-text">
@@ -106,7 +106,6 @@
             </div>
         </section>
 
-        <!-- CONTATO ESTATÍCO E DISCRETO -->
         <section id="contato" class="contact">
             <div class="contact-box reveal">
                 <h2>Informações de Contato</h2>
@@ -118,7 +117,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-info">

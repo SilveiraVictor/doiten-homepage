@@ -46,18 +46,26 @@
             background-position: center top;
         }
 
+        html, body {
+            min-height: 100%;
+            width: 100%;
+            overflow-x: clip;
+        }
+
         /* --- TELA DE PRELOADER --- */
         #preloader {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
-            height: 100%;
+            height: 100dvh;
+            min-height: 100dvh;
             background-color: var(--bg-main);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 0.8rem;
+            padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
             z-index: 9999;
             transition: opacity 0.6s ease, visibility 0.6s, background-color 0.4s ease;
         }
@@ -70,9 +78,8 @@
 
         .loader-logo-wrapper {
             position: relative;
-            width: 250px;
-            height: 145px;
-            margin-bottom: 20px;
+            width: clamp(180px, 62vw, 250px);
+            aspect-ratio: 250 / 145;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -122,10 +129,9 @@
 
         .loader-text {
             color: var(--text-main);
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3.2vw, 1.2rem);
             font-weight: bold;
-            letter-spacing: 3px;
-            margin-top: 15px;
+            letter-spacing: 0.2em;
             opacity: 0;
             animation: fadeInText 1s ease forwards;
             animation-delay: 2.2s;
@@ -250,6 +256,41 @@
 
         .nav-links .btn-sobrio::after { display: none; }
 
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .menu-toggle span {
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background-color: var(--text-main);
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
         /* --- HERO SECTION --- */
         .hero {
             max-width: 900px;
@@ -278,6 +319,7 @@
             line-height: 1.2;
             margin-bottom: 1.5rem;
             background: linear-gradient(to right, var(--hero-text-start), var(--hero-text-end));
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: background 0.4s ease;
@@ -285,6 +327,7 @@
 
         .hero h1 span {
             background: linear-gradient(to right, var(--logo-orange), #FF8C7A);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -651,32 +694,131 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
-            .nav-links {
-                display: none; 
+            .section-container,
+            .about,
+            .about-content,
+            .contact-box,
+            .footer-container,
+            .footer-bottom {
+                width: 100%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
             }
-            /* Exibir o botão de tema mesmo se o menu ocultar */
-            .theme-toggle-btn {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: calc(100% + 0.7rem);
+                right: 0;
+                width: min(92vw, 360px);
+                background: var(--bg-card);
+                border: 1px solid var(--border-color);
+                border-radius: 14px;
+                padding: 0.9rem;
+                gap: 0.4rem;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+                z-index: 110;
+            }
+            .nav-links.is-open {
                 display: flex;
+                flex-direction: column;
+            }
+            .nav-links li {
+                width: 100%;
+            }
+            .nav-links a {
+                display: block;
+                font-size: 0.95rem;
+                padding: 0.65rem 0.8rem;
+                border-radius: 8px;
+            }
+            .nav-links a:hover {
+                background-color: var(--bg-highlight-hover);
             }
             .header-nav-group {
                 display: flex;
                 align-items: center;
-                gap: 1rem;
+                justify-content: flex-end;
+                margin-left: auto;
+                position: relative;
+            }
+            .menu-toggle {
+                display: inline-flex;
+            }
+            .nav-container {
+                gap: 0.8rem;
+                padding: 0.9rem 1.1rem;
+            }
+            .logo {
+                font-size: 1.2rem;
+                gap: 8px;
+            }
+            .logo-svg-container {
+                width: 62px;
+                flex-shrink: 0;
             }
             .hero {
-                padding: 6rem 1.5rem;
+                padding: 5rem 1.2rem 4.2rem;
+            }
+            .hero::before {
+                width: min(100vw, 520px);
+                height: 320px;
             }
             .hero h1 {
                 font-size: 2.4rem;
             }
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .section-title {
                 font-size: 2rem;
             }
+            .section-title,
+            .section-subtitle,
+            .about-text,
+            .contact-box,
+            .footer-info,
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+            .footer-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+            .footer-info-logo {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .footer-info p {
+                max-width: min(100%, 44ch);
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .solutions,
+            .about,
+            .contact,
+            footer {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+            }
             .card {
                 padding: 2rem;
+            }
+            .card,
+            .highlight-item {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .card h3 {
+                font-size: 1.35rem;
+            }
+            .card ul {
+                max-width: 34ch;
             }
             .about-highlights {
                 grid-template-columns: 1fr !important;
@@ -689,4 +831,100 @@
                 gap: 1rem;
                 text-align: center;
             }
+            .email-display {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #preloader {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            .path-orange {
+                animation: drawPath 2s ease-in-out forwards, fillOrange 0.5s ease-in-out 1.8s forwards, popOrangeMobile 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s forwards;
+            }
+            .nav-container {
+                align-items: center;
+            }
+            .header-nav-group {
+                width: auto;
+                justify-content: flex-end;
+            }
+            .nav-links {
+                width: min(94vw, 320px);
+                right: 0;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero p {
+                font-size: 0.96rem;
+            }
+            .section-title {
+                font-size: 1.65rem;
+            }
+            .card,
+            .contact-box,
+            .about-content {
+                padding: 1.4rem;
+            }
+            .hero,
+            .solutions,
+            .about,
+            .contact,
+            footer {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .nav-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .btn-hero {
+                width: 100%;
+                text-align: center;
+            }
+            .email-display {
+                width: 100%;
+                text-align: center;
+                font-size: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero {
+                padding-top: 4.4rem;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .section-subtitle,
+            .about-text p,
+            .contact-box p,
+            .card p,
+            .card ul li {
+                font-size: 0.95rem;
+            }
+            .card,
+            .about-content,
+            .contact-box {
+                padding: 1.15rem;
+            }
+            .footer-container {
+                gap: 2rem;
+            }
+            .footer-info p {
+                max-width: 100%;
+            }
+        }
+
+        @keyframes popOrangeMobile {
+            to { transform: translate(7px, -5px); }
         }
